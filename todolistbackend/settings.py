@@ -31,7 +31,12 @@ ALLOWED_HOSTS = [
     '10.10.0.22'
 ]
 
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = [
+    'localhost',
+    '127.0.0.1',
+    '10.10.0.22'
+    '10.10.0.*'
+]
 
 
 # Application definition
