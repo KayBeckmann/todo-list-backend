@@ -8,3 +8,6 @@ class TodoItem(models.Model):
   author = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
   created_at = models.DateField(default=datetime.date.today)
   checked = models.BooleanField(default=False)
+  
+  def __str__(self): #Overview in adminpanel
+    return f"{self.created_at}: {self.author} -> {self.title} "
