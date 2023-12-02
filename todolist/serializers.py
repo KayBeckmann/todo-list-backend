@@ -1,5 +1,6 @@
 from rest_framework import serializers
 from .models import TodoItem
+from django.contrib.auth.models import User, Group
 
 class AuthorSerializer(serializers.HyperlinkedModelSerializer):
   class Meta:
