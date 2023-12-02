@@ -3,6 +3,7 @@ from rest_framework.authtoken.views import ObtainAuthToken, APIView
 from rest_framework.authtoken.models import Token
 from rest_framework.response import Response
 from .models import TodoItem
+from .serializers import TodoItemSerializer
 
 
 # Create your views here.
@@ -24,4 +25,5 @@ class TodoItemView(APIView):
   
   def get(self, request, format=None):
     todos = TodoItem.object.all()
-    return todos
+    serializer = TodoItemSerializer(todos)
+    return serializer
