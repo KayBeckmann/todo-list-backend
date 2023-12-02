@@ -25,5 +25,5 @@ class TodoItemView(APIView):
   
   def get(self, request, format=None):
     todos = TodoItem.objects.all()
-    serializer = TodoItemSerializer(todos)
+    serializer = TodoItemSerializer(todos, many=True)
     return Response(serializer.data)
