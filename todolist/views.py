@@ -24,6 +24,6 @@ class TodoItemView(APIView):
   permission_classes = []
   
   def get(self, request, format=None):
-    todos = TodoItem.object.all()
+    todos = TodoItem.objects.all()
     serializer = TodoItemSerializer(todos)
     return Response(serializer.data)
